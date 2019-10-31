@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('frontend.master');
+    return view('frontend.home.home');
 });
 
 Auth::routes();
@@ -22,3 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', 'Auth\loginController@logout')->name('user.logout');
+Route::get('/course','HomeController@course');
+Route::get('/event','HomeController@event');
+Route::get('/blog','HomeController@blog');
+Route::get('/contact','HomeController@contact');
